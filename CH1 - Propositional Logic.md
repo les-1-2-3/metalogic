@@ -11,16 +11,16 @@ The exposition follows the style common in modern mathematical logic: explicit i
 We fix:
 
 1. A countable set **PROP** of propositional variables:  
-   \[
+   $$\[
    p, q, r, p_0, p_1, \ldots
-   \]
+   \]$$
 
 2. Logical connectives:  
-   \[
+   $$\[
    \lnot, \quad \land,\quad \lor,\quad \to,\quad \leftrightarrow
-   \]
+   \]$$
 
-3. Parentheses: \( (, ) \)
+3. Parentheses: $$\( (, ) \)$$
 
 No other symbols are permitted.
 
@@ -33,12 +33,12 @@ The set **FORM** of formulas is the smallest set such that:
    Every variable \( p \in \mathrm{PROP} \) is a formula.
 
 2. **Inductive stage:**  
-   If \( \varphi, \psi \in \mathrm{FORM} \), then:
-   - \( \lnot \varphi \in \mathrm{FORM} \)
-   - \( (\varphi \land \psi) \in \mathrm{FORM} \)
-   - \( (\varphi \lor \psi) \in \mathrm{FORM} \)
-   - \( (\varphi \to \psi) \in \mathrm{FORM} \)
-   - \( (\varphi \leftrightarrow \psi) \in \mathrm{FORM} \)
+   If $$\( \varphi, \psi \in \mathrm{FORM} \)$$, then:
+   - $$\( \lnot \varphi \in \mathrm{FORM} \)$$
+   - $$\( (\varphi \land \psi) \in \mathrm{FORM} \)$$
+   - $$\( (\varphi \lor \psi) \in \mathrm{FORM} \)$$
+   - $$\( (\varphi \to \psi) \in \mathrm{FORM} \)$$
+   - $$\( (\varphi \leftrightarrow \psi) \in \mathrm{FORM} \)$$
 
 3. **Closure:**  
    Nothing else is a formula.
@@ -56,18 +56,18 @@ The set **FORM** of formulas is the smallest set such that:
 
 ### 2.1 Valuations
 A **valuation** is a function  
-\[
+$$\[
 v:\mathrm{PROP}\to\{0,1\}
-\]  
+\]$$  
 assigning a truth value to each propositional variable.
 
 The valuation extends uniquely to all formulas by the following **truth clauses**:
 
-- \( v(\lnot \varphi)=1 \) iff \( v(\varphi)=0 \).  
-- \( v(\varphi\land\psi)=1 \) iff \( v(\varphi)=1 \) and \( v(\psi)=1 \).  
-- \( v(\varphi\lor\psi)=1 \) iff \( v(\varphi)=1 \) or \( v(\psi)=1 \).  
-- \( v(\varphi\to\psi)=0 \) iff \( v(\varphi)=1 \) and \( v(\psi)=0 \); otherwise 1.  
-- \( v(\varphi\leftrightarrow\psi)=1 \) iff \( v(\varphi)=v(\psi) \).
+- $$\( v(\lnot \varphi)=1 \)$$ iff $$\( v(\varphi)=0 \)$$.  
+- $$\( v(\varphi\land\psi)=1 \)$$ iff $$\( v(\varphi)=1 \)$$ and $$\( v(\psi)=1 \)$$.  
+- $$\( v(\varphi\lor\psi)=1 \)$$ iff $$\( v(\varphi)=1 \)$$ or $$\( v(\psi)=1 \)$$.  
+- $$\( v(\varphi\to\psi)=0 \)$$ iff $$\( v(\varphi)=1 \)$$ and $$\( v(\psi)=0 \)$$; otherwise 1.  
+- $$\( v(\varphi\leftrightarrow\psi)=1 \)$$ iff $$\( v(\varphi)=v(\psi) \)$$.
 
 This completes the inductive semantic definition.
 
@@ -77,7 +77,7 @@ This completes the inductive semantic definition.
 Each connective corresponds to a specific Boolean function.  
 Example: the material conditional.
 
-| \(p\) | \(q\) | \(p\to q\) |
+| $$\(p\) | \(q\) | \(p\to q\)$$ |
 |------|------|-------------|
 | 1 | 1 | 1 |
 | 1 | 0 | 0 |
@@ -91,45 +91,45 @@ A formula’s meaning is its *truth function* under all valuations.
 ## 3. Semantic Properties
 
 ### 3.1 Tautologies
-A formula \( \varphi \) is a **tautology** if:
-\[
+A formula $$\( \varphi \)$$ is a **tautology** if:
+$$\[
 v(\varphi)=1 \quad \text{for every valuation } v.
-\]
+\]$$
 Notation:  
-\[
+$$\[
 \models \varphi.
-\]
+\]$$
 
 ---
 
 ### 3.2 Satisfiability
-A formula \( \varphi \) is:
+A formula $$\( \varphi \$$) is:
 
-- **Satisfiable** if there exists a valuation \( v \) with \( v(\varphi)=1 \).  
-- **Unsatisfiable** if for all valuations \( v \), \( v(\varphi)=0 \).
+- **Satisfiable** if there exists a valuation $$\( v \)$$ with $$\( v(\varphi)=1 \)$$.  
+- **Unsatisfiable** if for all valuations $$\( v \), \( v(\varphi)=0 \)$$.
 
-A set \( \Gamma \) is satisfiable if some valuation makes all members of \( \Gamma \) true.
+A set $$\( \Gamma \)$$ is satisfiable if some valuation makes all members of \( \Gamma \) true.
 
 ---
 
 ### 3.3 Logical Consequence
-For a set of formulas \( \Gamma \) and formula \( \varphi \):
+For a set of formulas $$\( \Gamma \)$$ and formula $$\( \varphi \)$$:
 
-\[
+$$\[
 \Gamma \models \varphi
-\]
+\]$$
 means:
 
-> For every valuation \( v \), if \( v(\gamma)=1 \) for all \( \gamma\in\Gamma \), then \( v(\varphi)=1 \).
+> For every valuation $$\( v \)$$, if $$\( v(\gamma)=1 \)$$ for all $$\( \gamma\in\Gamma \)$$, then $$\( v(\varphi)=1 \)$$.
 
-Equivalently: there is no valuation that makes all members of \( \Gamma \) true and \( \varphi \) false.
+Equivalently: there is no valuation that makes all members of $$\( \Gamma \)$$ true and $$\( \varphi \)$$ false.
 
 ---
 
 ## 4. Normal Forms
 
 ### 4.1 Literals
-A **literal** is either \( p \) or \( \lnot p \).
+A **literal** is either $$\( p \)$$ or $$\( \lnot p \)$$.
 
 ### 4.2 Clauses and Terms
 - A **term** is a conjunction of literals.  
@@ -142,21 +142,21 @@ These provide the building blocks of the normal forms.
 ### 4.3 Disjunctive Normal Form (DNF)
 A formula is in **DNF** if it is a disjunction of terms, i.e. a disjunction of conjunctions of literals:
 
-\[
+$$\[
 (\ell_{11}\land \cdots\land \ell_{1k}) \ \lor \ \cdots\ \lor\ (\ell_{n1}\land\cdots\land\ell_{nk}).
-\]
+\]$$
 
 ### 4.4 Conjunctive Normal Form (CNF)
 A formula is in **CNF** if it is a conjunction of clauses:
 
-\[
+$$\[
 (\ell_{11}\lor \cdots\lor \ell_{1k}) \ \land\ \cdots\ \land\ (\ell_{m1}\lor\cdots\lor\ell_{mk}).
-\]
+\]$$
 
 ---
 
 ### 4.5 Representability Theorems
-Every propositional formula \( \varphi \) is logically equivalent to both:
+Every propositional formula $$\( \varphi \)$$ is logically equivalent to both:
 
 - a formula in DNF, and  
 - a formula in CNF.
@@ -164,13 +164,13 @@ Every propositional formula \( \varphi \) is logically equivalent to both:
 Two constructive routes:
 
 1. **Truth-table method:**  
-   - Identify the rows where \( \varphi = 1 \) → assemble canonical DNF.  
-   - Identify the rows where \( \varphi = 0 \) → assemble canonical CNF.
+   - Identify the rows where $$\( \varphi = 1 \)$$ → assemble canonical DNF.  
+   - Identify the rows where $$\( \varphi = 0 \)$$ → assemble canonical CNF.
 
 2. **Equivalence-preserving rewrites:**  
-   - Eliminate \( \to \) and \( \leftrightarrow \).  
+   - Eliminate $$\( \to \)$$ and $$\( \leftrightarrow \)$$.  
    - Apply De Morgan’s laws.  
-   - Use distributivity \( \land \) over \( \lor \), and conversely.
+   - Use distributivity $$\( \land \) over \( \lor \)$$, and conversely.
 
 ---
 
@@ -188,9 +188,9 @@ The syntactic machinery is distinct from, but intended to reflect, semantic cons
 > If a formula is derivable in the proof system, then it is valid under all valuations.
 
 Formally:  
-\[
+$$\[
 \vdash \varphi \quad \Rightarrow \quad \models \varphi.
-\]
+\]$$
 
 Intuition:  
 Each inference rule preserves truth in all valuations; thus proofs cannot produce semantic falsehoods.
@@ -203,9 +203,9 @@ Each inference rule preserves truth in all valuations; thus proofs cannot produc
 > If a formula is valid under all valuations, then it is derivable in the proof system.
 
 Formally:  
-\[
+$$\[
 \models \varphi \quad \Rightarrow \quad \vdash \varphi.
-\]
+\]$$
 
 Intuition:  
 The deductive system is strong enough to prove every semantic truth.
@@ -215,9 +215,9 @@ The deductive system is strong enough to prove every semantic truth.
 ### 5.4 Harmony of Syntax and Semantics
 Combining both directions:
 
-\[
+$$\[
 \vdash \varphi \quad \text{iff} \quad \models \varphi.
-\]
+\]$$
 
 This provides the exact correspondence between formal proofs and truth under all interpretations—an alignment that is central to metalogical analysis.
 
